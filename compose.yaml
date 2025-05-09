@@ -1,0 +1,6 @@
+services:
+  spid-saml-check:
+    # Not using 1.11.x because of: https://github.com/italia/spid-saml-check/issues/302
+    image: italia/spid-saml-check:1.10.6
+    ports:
+      - 8443:8443

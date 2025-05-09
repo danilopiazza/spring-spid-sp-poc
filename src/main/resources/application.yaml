@@ -1,0 +1,11 @@
+spring:
+  security:
+    saml2:
+      relyingparty:
+        registration:
+          spid-demo-idp:
+            assertingparty:
+              entity-id: https://localhost:8443/demo
+              singlesignon:
+                url: https://localhost:8443/demo/samlsso
+                sign-request: false
