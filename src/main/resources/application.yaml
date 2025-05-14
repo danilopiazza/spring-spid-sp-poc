@@ -9,3 +9,11 @@ spring:
               singlesignon:
                 url: https://localhost:8443/demo/samlsso
                 sign-request: false
+
+saml2:
+  metadata:
+    entity-descriptor:
+      organization:
+        name: sp-demo-org
+        display-name: SP Demo Organization
+        url: http://example.com/demo
