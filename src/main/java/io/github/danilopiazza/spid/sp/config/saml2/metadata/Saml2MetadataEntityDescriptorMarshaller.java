@@ -1,4 +1,4 @@
-package io.github.danilopiazza.spid.sp.config.saml2;
+package io.github.danilopiazza.spid.sp.config.saml2.metadata;
 
 import io.github.danilopiazza.spid.sp.config.context.ApplicationContextProvider;
 import org.opensaml.core.xml.XMLObject;

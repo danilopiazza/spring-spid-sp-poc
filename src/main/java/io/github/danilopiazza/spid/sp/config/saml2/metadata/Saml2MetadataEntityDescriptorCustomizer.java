@@ -1,10 +1,7 @@
-package io.github.danilopiazza.spid.sp.config.saml2;
+package io.github.danilopiazza.spid.sp.config.saml2.metadata;
 
 import org.opensaml.saml.saml2.metadata.*;
-import org.opensaml.saml.saml2.metadata.impl.OrganizationBuilder;
-import org.opensaml.saml.saml2.metadata.impl.OrganizationDisplayNameBuilder;
-import org.opensaml.saml.saml2.metadata.impl.OrganizationNameBuilder;
-import org.opensaml.saml.saml2.metadata.impl.OrganizationURLBuilder;
+import org.opensaml.saml.saml2.metadata.impl.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -18,6 +15,11 @@ public class Saml2MetadataEntityDescriptorCustomizer {
     String organizationUrl;
 
     public void customize(EntityDescriptor entityDescriptor) {
+        entityDescriptor.setOrganization(organization());
+        entityDescriptor.getContactPersons().add(contactPerson());
+    }
+
+    private Organization organization() {
         Organization organization = new OrganizationBuilder().buildObject();
 
         OrganizationName name = new OrganizationNameBuilder().buildObject();
@@ -32,6 +34,14 @@ public class Saml2MetadataEntityDescriptorCustomizer {
         url.setURI(organizationUrl);
         organization.getURLs().add(url);
 
-        entityDescriptor.setOrganization(organization);
+        return organization;
+    }
+
+    private ContactPerson contactPerson() {
+        ContactPerson contactPerson = new ContactPersonBuilder().buildObject();
+
+        contactPerson.setType(ContactPersonTypeEnumeration.OTHER);
+
+        return contactPerson;
     }
 }

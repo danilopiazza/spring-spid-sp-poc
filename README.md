@@ -30,8 +30,6 @@ Set up your [SPID Demo Identity Provider](https://github.com/italia/spid-saml-ch
    localhost nor 127.0.0.1.**. For example, if your IP address is 172.26.240.1,
    submit the following metadata URL: http://172.26.240.1:8080/saml2/metadata.
 4. Navigate to the **Check Strict** link to run the validation tests.
-5. **TODO**: This currently won't work, because the SP metadata is missing the
-   `ContactPerson` element.
 
 See also: [How to use it as a SPID Demo](https://github.com/italia/spid-saml-check?tab=readme-ov-file#how-to-use-it-as-a-spid-demo).
 
